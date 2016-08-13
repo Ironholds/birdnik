@@ -21,8 +21,7 @@ range of pronunciations; you should experiment.}
 \item{min_wlmi}{the minimum (word-length weighted) strength of the similarity
 between the bigram words.}
 
-\item{limit}{the maximum number of items to retrieve for each word. 5 by
-default.}
+\item{limit}{the maximum number of items to return for any one word.}
 
 \item{...}{further arguments to pass to httr's GET.}
 }

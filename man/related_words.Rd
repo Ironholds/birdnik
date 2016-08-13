@@ -28,7 +28,8 @@ a data.frame of 3 columns: \code{word} (the original term),
 with the \code{words} argument.
 }
 \examples{
+\dontrun{
 cat_adjacent <- related_words(key = "madeupkey", words = "cat")
-
+}
 }
 

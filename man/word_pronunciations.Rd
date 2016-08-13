@@ -26,8 +26,7 @@ searches all of them.}
 options are "ahd", "IPA", "arpabet" and "gcide-diacritical". "all" (the
 default) provides any that are available.}
 
-\item{limit}{the maximum number of results to return for any one word; 50 by
-default.}
+\item{limit}{the maximum number of items to return for any one word.}
 
 \item{...}{further arguments to pass to httr's GET.}
 }

@@ -16,6 +16,8 @@
 #'"ahd", "century", "wiktionary", "wordnet" and "webster". "all" (the default)
 #'searches all of them.
 #'
+#'@param limit the maximum number of items to return for any one word.
+#'
 #'@param ... further arguments to pass to httr's GET.
 #'
 #'@return a list structure containing definitions for each word in \code{words},
@@ -32,7 +34,7 @@
 #'@export
 word_definitions <- function(key, words, use_canonical = FALSE,
                              source_dictionaries = "all",
-                             include_tags = FALSE, limit = 200, ...){
+                             limit = 200, ...){
 
   stopifnot(length(use_canonical) == 1)
   stopifnot(length(include_related) == 1)
@@ -126,9 +128,6 @@ related_words <- function(key, words, use_canonical = FALSE, ...){
 #'options are "ahd", "IPA", "arpabet" and "gcide-diacritical". "all" (the
 #'default) provides any that are available.
 #'
-#'@param limit the maximum number of results to return for any one word; 50 by
-#'default.
-#'
 #'@inheritParams word_definitions
 #'@examples
 #'\dontrun{
@@ -216,9 +215,6 @@ word_frequency <- function(key, words, use_canonical = FALSE, start_year = 1800,
 #'
 #'@param min_wlmi the minimum (word-length weighted) strength of the similarity
 #'between the bigram words.
-#'
-#'@param limit the maximum number of items to retrieve for each word. 5 by
-#'default.
 #'
 #'@inheritParams word_definitions
 #'

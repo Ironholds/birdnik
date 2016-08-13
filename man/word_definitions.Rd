@@ -5,7 +5,7 @@
 \title{Retrieve definitions of a word}
 \usage{
 word_definitions(key, words, use_canonical = FALSE,
-  source_dictionaries = "all", include_tags = FALSE, limit = 200, ...)
+  source_dictionaries = "all", limit = 200, ...)
 }
 \arguments{
 \item{key}{a Wordnik API key. These can be obtained
@@ -17,6 +17,8 @@ at the \href{http://developer.wordnik.com/}{Wordnik developer portal}.}
 (i.e. 'cat', for 'cats') instead of the actual \code{word}. FALSE by default.
 Note that for pronunciations specifically, setting it to TRUE may get a wider
 range of pronunciations; you should experiment.}
+
+\item{limit}{the maximum number of items to return for any one word.}
 
 \item{...}{further arguments to pass to httr's GET.}
 
