@@ -29,7 +29,7 @@ each entry in \code{words}.
 }
 \examples{
 \dontrun{
-examples <- word_top_example(key = "madeupkey", words = c("cat", "dog", "turnip")
+examples <- word_top_example(key = "madeupkey", words = c("cat", "dog", "turnip"))
 }
 }
 

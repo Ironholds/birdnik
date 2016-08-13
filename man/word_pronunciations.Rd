@@ -36,8 +36,7 @@ pronunciations for a series of words.
 }
 \examples{
 \dontrun{
-cats_vs_dogs <- word_pronounciations(key = "fakekey",
-                                    words = c("cat", "dog"))
+cats_vs_dogs <- word_pronunciations(key = "fakekey", words = c("cat", "dog"))
 }
 }
 
