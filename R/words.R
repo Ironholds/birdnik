@@ -33,7 +33,7 @@
 #'}
 #'@export
 word_definitions <- function(key, words, use_canonical = FALSE,
-                             source_dictionaries = "all",
+                             source_dicts = "all",
                              limit = 200, ...){
 
   stopifnot(length(use_canonical) == 1)
@@ -41,7 +41,7 @@ word_definitions <- function(key, words, use_canonical = FALSE,
   param <- paste0("word.json/", words, "/definitions?limit=", limit,
                   "&includeRelated=false",
                   "&includeTags=false",
-                  "&sourceDictionaries=", clean_dicts(source_dictionaries),
+                  "&sourceDictionaries=", clean_dicts(source_dicts),
                   "&useCanonical=", clean_bools(use_canonical))
 
   return(lapply(param, query, key = key))

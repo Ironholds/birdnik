@@ -1,7 +1,7 @@
 #'@importFrom httr GET user_agent stop_for_status content
 query <- function(key, params, ...){
   url <- paste0("http://api.wordnik.com:80/v4/", params, "&api_key=", key)
-  result <- httr::GET(url, httr::user_agent("Birdnik - the wordnik client for R"))
+  result <- httr::GET(url, httr::user_agent("Birdnik - the wordnik client for R - https://github.com/Ironholds/birdnik"))
   httr::stop_for_status(result)
   return(httr::content(result))
 }

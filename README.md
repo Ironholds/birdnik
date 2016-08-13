@@ -12,7 +12,7 @@ __Status:__ Stable
 
 [Wordnik](https://www.wordnik.com/) is a service that provides English-language words, their definitions, pronounciations, and a whole host of other nifty data like frequency of use in literature and parts-of-speech data. `birdnik` is a connector to that service.
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
+Please note that this project is released with a [Contributor Code of Conduct](https://github.com/Ironholds/birdnik/blob/master/CONDUCT.md).
 By participating in this project you agree to abide by its terms.
 
 ### Why `birdnik`?

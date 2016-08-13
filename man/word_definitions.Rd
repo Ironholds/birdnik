@@ -4,8 +4,8 @@
 \alias{word_definitions}
 \title{Retrieve definitions of a word}
 \usage{
-word_definitions(key, words, use_canonical = FALSE,
-  source_dictionaries = "all", limit = 200, ...)
+word_definitions(key, words, use_canonical = FALSE, source_dicts = "all",
+  limit = 200, ...)
 }
 \arguments{
 \item{key}{a Wordnik API key. These can be obtained
@@ -18,13 +18,13 @@ at the \href{http://developer.wordnik.com/}{Wordnik developer portal}.}
 Note that for pronunciations specifically, setting it to TRUE may get a wider
 range of pronunciations; you should experiment.}
 
-\item{limit}{the maximum number of items to return for any one word.}
-
-\item{...}{further arguments to pass to httr's GET.}
-
 \item{source_dicts}{the dictionaries to use; options are any permutation of
 "ahd", "century", "wiktionary", "wordnet" and "webster". "all" (the default)
 searches all of them.}
+
+\item{limit}{the maximum number of items to return for any one word.}
+
+\item{...}{further arguments to pass to httr's GET.}
 }
 \value{
 a list structure containing definitions for each word in \code{words},
