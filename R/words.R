@@ -37,12 +37,10 @@ word_definitions <- function(key, words, use_canonical = FALSE,
                              limit = 200, ...){
 
   stopifnot(length(use_canonical) == 1)
-  stopifnot(length(include_related) == 1)
-  stopifnot(length(include_tags) == 1)
 
   param <- paste0("word.json/", words, "/definitions?limit=", limit,
                   "&includeRelated=false",
-                  "&includeTags=", clean_bools(include_tags),
+                  "&includeTags=false",
                   "&sourceDictionaries=", clean_dicts(source_dictionaries),
                   "&useCanonical=", clean_bools(use_canonical))
 
@@ -61,7 +59,7 @@ word_definitions <- function(key, words, use_canonical = FALSE,
 #'
 #'@examples
 #'\dontrun{
-#'examples <- word_top_example(key = "madeupkey", words = c("cat", "dog", "turnip")
+#'examples <- word_top_example(key = "madeupkey", words = c("cat", "dog", "turnip"))
 #'}
 #'@export
 word_top_example <- function(key, words, use_canonical = FALSE, ...){
@@ -71,15 +69,22 @@ word_top_example <- function(key, words, use_canonical = FALSE, ...){
   param <- paste0("word.json/", words,
                   "/topExample?useCanonical=", clean_bools(use_canonical))
 
-  return(do.call("rbind", lapply(param, function(param, key, ...){
-    result <- query(key, param, ...)
+  return(do.call("rbind", mapply(function(param, words, key, ...){
+    result <- try({
+      result <- query(key, param, ...)
+    }, silent = TRUE)
+    if("try-error" %in% class(result)){
+      return(data.frame(provider = NA, year = NA, rating = NA,
+                        word = words, example = NA, stringsAsFactors = FALSE))
+    }
     return(data.frame(provider = result$provider$name,
                       year = result$year,
                       rating = result$rating,
                       word = result$word,
                       example = result$text,
                       stringsAsFactors = FALSE))
-  }, key = key, ...)))
+  }, param = param, words = words, key = key, ...,
+  SIMPLIFY = FALSE, USE.NAMES = FALSE)))
 }
 
 #'@title Retrieve related words
@@ -131,8 +136,7 @@ related_words <- function(key, words, use_canonical = FALSE, ...){
 #'@inheritParams word_definitions
 #'@examples
 #'\dontrun{
-#'cats_vs_dogs <- word_pronounciations(key = "fakekey",
-#'                                     words = c("cat", "dog"))
+#'cats_vs_dogs <- word_pronunciations(key = "fakekey", words = c("cat", "dog"))
 #'}
 #'@export
 word_pronunciations <- function(key, words, use_canonical = FALSE,
