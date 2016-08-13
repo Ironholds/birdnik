@@ -33,3 +33,16 @@ testthat::test_that("pronounciation retrieval works", {
 })
 
 
+testthat::test_that("frequency retrieval works", {
+  result <- word_frequency(key = key, words = c("cat", "dog"))
+  testthat::expect_true(is.data.frame(result))
+  testthat::expect_equal(ncol(result), 3)
+  testthat::expect_true(all(names(result) %in% c("word", "year", "count")))
+})
+
+testthat::test_that("bigram retrieval works", {
+  result <- word_bigrams(key = key, words = c("cat", "dog"))
+  testthat::expect_true(is.data.frame(result))
+  testthat::expect_equal(ncol(result), 5)
+  testthat::expect_true(all(names(result) %in% c("word", "first_gram", "second_gram", "mi", "wlmi")))
+})
