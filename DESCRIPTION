@@ -4,7 +4,7 @@ Title: Connector for the Wordnik API
 Version: 0.1.0
 Author: Oliver Keyes
 Maintainer: Oliver Keyes <ironholds@gmail.com>
-Description: A connector to the API for 'Wordnik' <https://whoapi.com>, a dictionary service that also provides
+Description: A connector to the API for 'Wordnik' <https://www.wordnik.com>, a dictionary service that also provides
              bigram generation, word frequency data, and a whole host of other functionality.
 License: MIT + file LICENSE
 LazyData: TRUE
