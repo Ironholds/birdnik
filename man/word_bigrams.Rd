@@ -42,4 +42,3 @@ dog_associations <- word_bigrams(key = "madeupkey", words = "dog")
 #mauling and fighting. But also biscuits!
 }
 }
-

@@ -44,4 +44,3 @@ cats <- word_definitions(key = "madeupkey", words = "cat")
 \code{\link{birdnik_get}} for ways to conveniently access individual
 chunks of the returned dataset.
 }
-

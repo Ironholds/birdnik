@@ -32,4 +32,3 @@ with the \code{words} argument.
 cat_adjacent <- related_words(key = "madeupkey", words = "cat")
 }
 }
-

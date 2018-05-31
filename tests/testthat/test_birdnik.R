@@ -1,7 +1,7 @@
 testthat::context("Test birdnik")
 
 # Key for tests. Please do *not* use it for other purposes.
-key <- "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5"
+key <- "d8ed66f01da01b0c6a0070d7c1503801993a39c126fbc3382"
 
 testthat::test_that("Definition retrieval works", {
   result <- word_definitions(key = key, words = "cat")

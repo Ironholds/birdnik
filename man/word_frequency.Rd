@@ -40,4 +40,3 @@ cats_versus_dogs <- word_frequency(key = "notarealkey", words = c("cat", "dog"))
 }
 
 }
-

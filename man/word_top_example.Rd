@@ -32,4 +32,3 @@ each entry in \code{words}.
 examples <- word_top_example(key = "madeupkey", words = c("cat", "dog", "turnip"))
 }
 }
-

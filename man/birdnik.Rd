@@ -4,6 +4,7 @@
 \name{birdnik}
 \alias{birdnik}
 \alias{birdnik-package}
+\alias{birdnik-package}
 \title{Connector to the Wordnik API}
 \description{
 This package provides functions for the Wordnik API.
@@ -14,4 +15,3 @@ This package provides functions for the Wordnik API.
 \code{\link{word_frequency}}, \code{\link{word_bigrams}}, and
 \code{\link{birdnik_get}}.
 }
-

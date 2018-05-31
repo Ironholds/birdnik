@@ -39,4 +39,3 @@ pronunciations for a series of words.
 cats_vs_dogs <- word_pronunciations(key = "fakekey", words = c("cat", "dog"))
 }
 }
-
