@@ -2,7 +2,7 @@
 
 An R connector to the Wordnik API
 
-__Author:__ Oliver Keyes<br/>
+__Author:__ Os Keyes<br/>
 __License:__ [MIT](http://opensource.org/licenses/MIT)<br/>
 __Status:__ Stable
 
